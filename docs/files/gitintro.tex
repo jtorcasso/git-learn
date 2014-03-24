@@ -1,0 +1,98 @@
+%!TEX root = ../main.tex
+
+\begin{frame}[t]\frametitle{Introducing Git}
+    Git is a distributional version control system most notably used
+    by Github, the web-based hosting service for software development projects.
+
+    We will use Git to demonstrate version control systems. For a basic
+    introduction to git, we recommend \citet{ChaconHamano2009}, which
+    can be accessed \href{http://git-scm.com/book}{here}. We heavily
+    borrow heavily from this book here.
+\end{frame}
+
+\begin{frame}[t]\frametitle{Introducing Git}
+    First imagine a git server, which contains all of the relevant
+    files in a project.
+
+    \begin{center}
+        \tikzstyle{file}=[draw, rectangle, text centered, text width=2.5cm,
+            fill=black!20, rounded corners]
+
+        \begin{tikzpicture}
+
+            \begin{scope}[local bounding box=bb]
+                \node (server) {Central Server};
+                \node [file, below of=server] (folder) {MyProject/};
+                \node [file,below of=folder,xshift=2cm] (a) {File a};
+                \node [file,below of=a] (b) {File b};
+                \node [file,below of=b] (c) {File c};
+                \node [file,below of=c,xshift=-2cm] (git) {.git/};
+                \node [below of=git,xshift=0.3cm] (content) {...};
+
+                \draw (folder) -- (0,-3);
+                \draw (0,-3) -- (a.west);
+                \draw (0,-3) -- (b.west);
+                \draw (0,-3) -- (c.west);
+                \draw (0,-3) -- (git.north);
+                \draw (git.south) -- (content.west);
+            \end{scope}
+
+            \begin{pgfonlayer}{background}
+                \node [fill=blue!20,fit=(bb)] {};
+            \end{pgfonlayer}
+
+            \draw [decorate,decoration={brace,amplitude=10pt}] (4,0) -- (4,-6) node [midway,xshift=1.5cm] (hash) {24b9da655};
+            \node [right of=git,xshift=6cm,yshift=-1cm] (gitlab) {Git Storage};
+            \node [below of=hash,xshift=1cm] (hashlab) {Commit Hash (version \#)};
+
+            \draw [<-] (hash) -- (hashlab);
+            \draw [<-] (git) -- (gitlab);
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}[t]\frametitle{Introducing Git}
+    When Pam clones this repository to her computer, she sees:
+    \begin{center}
+        \tikzstyle{file}=[draw, rectangle, text centered, text width=2.5cm,
+            fill=black!20, rounded corners]
+
+        \begin{tikzpicture}
+
+            \begin{scope}[local bounding box=bb]
+                \node (server) {Pam's Computer};
+                \node [file, below of=server] (folder) {MyProject/};
+                \node [file,below of=folder,xshift=2cm] (a) {File a};
+                \node [file,below of=a] (b) {File b};
+                \node [file,below of=b] (c) {File c};
+                \node [file,below of=c,xshift=-2cm] (git) {.git/};
+                \node [below of=git,xshift=0.3cm] (content) {...};
+
+                \draw (folder) -- (0,-3);
+                \draw (0,-3) -- (a.west);
+                \draw (0,-3) -- (b.west);
+                \draw (0,-3) -- (c.west);
+                \draw (0,-3) -- (git.north);
+                \draw (git.south) -- (content.west);
+            \end{scope}
+
+            \begin{pgfonlayer}{background}
+                \node [fill=blue!20,fit=(bb)] {};
+            \end{pgfonlayer}
+
+            \draw [decorate,decoration={brace,amplitude=10pt}] (4,0) -- (4,-6) node [midway,xshift=1.5cm] (hash) {24b9da655};
+            \node [right of=git,xshift=6cm,yshift=-1cm] (gitlab) {Git Storage};
+            \node [below of=hash,xshift=1cm] (hashlab) {Commit Hash (version \#)};
+
+            \draw [<-] (hash) -- (hashlab);
+            \draw [<-] (git) -- (gitlab);
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Resources}
+    Many resources available for git. 
+    \href{http://stackoverflow.com/questions/tagged/git}{Stackoverflow} 
+    will answer most questions. This 
+    \href{http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide}{post} is a great resource for beginners and advanced users alike.
+\end{frame}
