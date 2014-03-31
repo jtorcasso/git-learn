@@ -407,6 +407,157 @@
 	and then manually commit. 
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{Git Concepts}
+    Let's say Pam has a merge conflict. The conflicted file
+    looks like this in the two different branches.
+
+    \begin{itemize}
+        \item \framebox{dev}
+
+        \vspace{0.25cm}
+        \newbox{\mybox}
+        \begin{lrbox}{\mybox}
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}[basicstyle=\tiny\ttfamily\color{white}]
+places = {'Mexico':'Spanish', 'United States':'English',
+    'Brazil':'Portuguese'}
+
+for key in places:
+        print key, places[key]
+
+for i in [1,2,3]:
+        print i
+        \end{lstlisting}
+        \end{minipage}
+        \end{lrbox}
+        \colorbox{black}{\usebox{\mybox}}
+
+        \vspace{0.25cm}
+        \item \framebox{master}
+
+        \vspace{0.25cm}
+        \newbox{\mybox}
+        \begin{lrbox}{\mybox}
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}[basicstyle=\tiny\ttfamily\color{white}]
+places = {'Mexico':'Spanish', 'United States':'English',
+    'Brazil':'Portuguese'}
+
+for key in places:
+        print key, places[key]
+
+for i in [4,5,6]:
+    print i
+        \end{lstlisting}
+        \end{minipage}
+        \end{lrbox}
+        \colorbox{black}{\usebox{\mybox}}
+        
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git Concepts}
+    After attempting the merge, Git forces Pam to resolve
+    all merge conflicts. Git modifies the file in her working
+    directory to highlight the conflicting portions of the file.
+
+    \vspace{0.5cm}
+    \newbox{\mybox}
+    \begin{lrbox}{\mybox}
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}[basicstyle=\tiny\ttfamily\color{white}]
+places = {'Mexico':'Spanish', 'United States':'English',
+        'Brazil':'Portuguese'}
+
+for key in places:
+        print key, places[key]
+
+<<<<<<< HEAD
+for i in [4,5,6]:
+=======
+for i in [1,2,3]:
+>>>>>>> new
+        print i
+    
+    \end{lstlisting}
+    \end{minipage}
+    \end{lrbox}
+    \colorbox{black}{\usebox{\mybox}}
+
+    \vspace{0.5cm}
+    \inlinecode{<<<<<<<< HEAD} signals the version of your current branch
+    and \inlinecode{>>>>>>>> new} that of the branch you attempting to 
+    merge into your current branch. 
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git Concepts}
+    Pam resolves the conflict by editing the file.
+
+    \vspace{0.5cm}
+    \newbox{\mybox}
+    \begin{lrbox}{\mybox}
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}[basicstyle=\tiny\ttfamily\color{white}]
+places = {'Mexico':'Spanish', 'United States':'English',
+        'Brazil':'Portuguese'}
+
+for key in places:
+        print key, places[key]
+
+for i in [1,2,3,4,5,6]:
+        print i
+    \end{lstlisting}
+    \end{minipage}
+    \end{lrbox}
+    \colorbox{black}{\usebox{\mybox}}
+
+    \vspace{0.5cm}
+    Then she commits again.
+
+    \vspace{0.5cm}
+    \newbox{\mybox}
+    \begin{lrbox}{\mybox}
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}[basicstyle=\tiny\ttfamily\color{white}]
+$ git add filea
+$ git commit -m "Resolved conflict, iterating through long list"
+    \end{lstlisting}
+    \end{minipage}
+    \end{lrbox}
+    \colorbox{black}{\usebox{\mybox}}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git Concepts}
+    To view the difference between this and the last
+    commit, Pam uses the command 
+    \inlinecode{\$ git diff HEAD^ -- filea}
+
+    \begin{center} 
+        \begin{figure}[h!] \centering
+            \scalebox{0.45}{\includegraphics{figures/diff}}   
+        \end{figure}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git Concepts}
+    Because she has 
+    \href{http://stackoverflow.com/questions/3713765/viewing%
+    -all-git-diffs-with-vimdiff}{configured} 
+    Git to use a difftool, 
+    she also uses vimdiff with the command
+    \inlinecode{\$ git difftool HEAD^ -- filea}
+    for a side-by-side comparison.
+
+    \begin{center} 
+        \begin{figure}[h!] \centering
+            \scalebox{0.27}{\includegraphics{figures/difftool}}   
+        \end{figure}
+    \end{center}
+\end{frame}
+
+
 \begin{frame}[t]\frametitle{Git Concepts}
 	After the merge is complete, Pam's commit history in
 	her local repository looks like:
@@ -451,6 +602,12 @@
 
     \end{tikzpicture}
     }
+\end{frame}
+
+\begin{frame}[c]
+    \begin{center} \Large
+        Framework For Understanding Git
+    \end{center}
 \end{frame}
 
 \begin{frame}[c]\frametitle{Understanding Scope}
