@@ -1,0 +1,148 @@
+<notes>
+  <note number="1">
+    - Hi, I'm Jake
+
+    - Work at ERC, projects varying from program evaluation,
+      forecasting with childhood measures, and some modelling
+      of dynamic discrete choice models
+
+        - Actively develop my own software tools for these
+          projects in Python. 
+
+        - Aid in some parts of development
+          in grmToolbox and the sructToolbox
+
+        - In all projects, use Git for version control
+          (and much more)
+
+    - Today, present on version control in Economic Research
+
+    - Boring and waste of time to explore syntax of version control
+
+    - Hope to show:
+        - How you already use version control
+        - But maybe you do it poorly
+        - Advantages of formal systems of version control
+        - Give concepts, speed-up understanding
+            - illustrate with conceptual examples
+            - additional resources
+  </note>
+  <note number="2">
+    - We all have versions of our work
+
+    - Look on your computer and you will see...
+  </note>
+  <note number="3">
+    - Which brings us to our topic...
+  </note>
+  <note number="4">
+    - Historically, what was version control?
+
+    - Poor methods lead to regional heterogeneity
+
+    - But these methods (though digitized) persist today...
+
+    - But there are better methods for those willing to 
+      invest a bit of time (trust me, its worth it!)
+
+    - There are some aspects central to all of these
+      (next slide)
+  </note>
+  <note number="5">
+    Infrastructure
+    --------------
+
+    - Remote file system
+    - Local file system
+
+    - Some method of comparing and sending files across
+      these two systems, with the purpose of storing
+      information about different versions
+
+    - See examples
+
+    - In local VCS, the remote and local are one in the same
+
+    - In centralized, the central (remote) stores everything
+      and is the central communicator for all actions
+
+    - In distributional, both the remote and local file systems
+      can function in the same way (they are copies!)
+  </note>
+  <note number="6,7">
+    - usually speed advantages (no networking)
+
+    - insured against loss (server is down, erased, etc.)
+  </note>
+  <note number="8">
+    - Ok, this looks nice, but what advantages does it have
+      for an Economic Researcher?
+
+    - How will it enhance my workflow?
+
+    - Arguably, these 3 concepts are central to your research
+
+        - Having more efficient way to handle these aspects of
+          research will free up time for...
+
+            - creativity
+
+            - focus on economic problems
+    - And, Version Control lies at the center of these
+      (hopefully not just because I created a Venn Diagram
+      saying so)
+
+    - I'll address each one of these topics throughout and
+      show how formal systems of version control do much more
+      than just manage version history.
+  </note>
+  <note number="9">
+    1. The very nature of DVCS systems makes it easy to send
+       around your project.
+
+    2. Many tools developed to visualize projects, especially
+       computer code and text (Github, Redmine, Ipython Notebook)
+
+    3. Integration with existing knowledge and the creation of 
+       new knowledge is faster!
+
+    4. Scientific work can be quickly reviewed by peers or
+       third parties
+
+    5. See, for example, the grmToolbox online!
+  </note>
+  <note number="10">
+    - Remember the Bible scribes? They wrote in the margins of the 
+      book to keep track of version issues. 
+
+    - Likewise, you've probably had to deal with plenty of ad-hoc
+      methods of tracking history (README files or word-of-mouth)
+
+    - You've been hesitant to try new methods, because the one
+      you currently have "works" (non-linear work-flows)
+
+        - Model Averaging, MCMC sampling
+
+    - Only gets messier when you collaborate
+  </note>
+  <note number="12">
+    - You might say, but I have no problems, my code
+      doesn't need version history and I don't collaborate
+      and I have no need for such an advanced vehicle of
+      dissemenation and visibility. 
+
+    - You might be right. You're project might not require
+      version control. 
+
+    - I hope to give you a quick guide to help you determine
+      the benefit for yourself
+
+    - This will include actual commands (using Git), which I 
+      relate back to the aspects we just covered.
+
+    - And because I think Git is a good choice, I'll go over 
+      important concepts to (hopefully) make learning Git a 
+      bit easier
+  </note>
+  
+</notes>
