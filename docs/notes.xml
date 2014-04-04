@@ -2,22 +2,29 @@
   <note number="1">
     - Hi, I'm Jake
 
-    - Work at ERC, projects varying from program evaluation,
-      forecasting with childhood measures, and some modelling
-      of dynamic discrete choice models
+    - Work at ERC
 
-        - Actively develop my own software tools for these
-          projects in Python. 
+    - Prior to ERC at ODesk
+        - experiments to investigate quality shirking
+        - software to analyze textual data
+        - Shortly after, accepted job as ERC
 
-        - Aid in some parts of development
-          in grmToolbox and the sructToolbox
+    - At ERC
+        - program evaluation
+        - forecast models
+        - structural equation modelling
 
-        - In all projects, use Git for version control
-          (and much more)
+    - Actively develop software to accomplish tasks
+        - PyTabular
+        - Model Averaging toolkit
+        - grmToolbox
+        - structToolbox
+
+    - Use version control software for all projects
 
     - Today, present on version control in Economic Research
 
-    - Boring and waste of time to explore syntax of version control
+    - Boring, waste time to cover syntax
 
     - Hope to show:
         - How you already use version control
@@ -123,9 +130,34 @@
 
         - Model Averaging, MCMC sampling
 
-    - Only gets messier when you collaborate
+    - Organization becomes more important when you collaborate
   </note>
   <note number="11">
+    - Emails back and forth, sending files
+
+    - Nothing is contextualized!
+
+    - Information is lost
+
+    - Collaborating at a sub-optimal level
+
+    - Most verion control systems both lower the cost
+      of collaboration (ease of communication) and enhance
+      the benefits
+
+    - Don't worry about integrity of your project when working
+      with people of varying experience level
+          - Changes can be reverted
+
+    - Communication is easier and embedded within the context
+      of your project
+         - Github, for example, or Redmine
+
+    - Divide and conquer, then consolidate!
+        - Formal methods within the software to ease
+          this process
+    ____________________________________________________________
+
     - You might say, but I have no problems, my code
       doesn't need version history and I don't collaborate
       and I have no need for such an intricate vehicle of
@@ -160,11 +192,35 @@
   <note number="14">
     - Begin with familiar setting (e.g. Github, or Athens)
 
+    - Files in a folder
+
+    - Because of this .git directory, these files are marked
+      with an id number (commit hash), which denotes a particular
+      version
+
+    - That commit hash will always exist in the .git directory
+      and you use it to revert back to the state of your files
+      at that time.
+
     - This is all Git is
 
-    - Everything stored in .git/ directory
+    - I introduce here the conceptual difference between:
 
         - Gitland vs. working directory
+
+    - Working directory = current, local state of files, including
+      modifications from the last formally saved state
+
+    - Gitland = file states formally recorded by Git and stored
+      in the .git directory
+  </note>
+  <note number="15">
+    - To proceed with my example
+
+    - Let me introduce you to Pam and David
+
+    - David started a repository on Github and Pam has cloned
+      that repository to her own computer
   </note>
   <note number="16">
     - Notice how I'm highlight that the file has changed, but that nothing
@@ -180,6 +236,10 @@
     - Notice how "Gitland" has changed. I highlighted the Git 
       directory to show that Git has recorded a new snapshot to
       the commit history.
+
+    - Modifying the file changed only the working directory
+
+    - But how to know how far ahead I am?
   </note>
   <note number="22">
     - Okay, let's take a step back and look at what we have done
@@ -212,6 +272,12 @@
       more effective.
   </note>
   <note number="29">
+    - Recall, Pam and David are working on the project 
+      together.
+
+    - David is interested in merging Pam's changes into
+      his own work
+
     - Typical mode of communication is through the remote
       central server. Though direct communication is possible.
 
@@ -219,6 +285,10 @@
       tracker
   </note>
   <note number="31">
+
+    - To introduce our next topic, branching, we can
+      ask...
+
     - What happened in that merge?
 
     - Need to introduce branching to understanding merging
@@ -233,18 +303,30 @@
     - Experimentation without worry
 
     - Checkout Numpy or Statsmodels on github to see this workflow in action
+        - dev branch and stable release branches
   </note>
   <note number="35">
     - By location, I mean the state of your files, literally what the files look like, 
       over the course of development.
+
+    - To navigate in Gitland, your working directory must be 
+      clear!
   </note>
   <note number="37">
     - Stuck in the mud if you have made modifications to files
 
     - Head must point to a branch
+
+    - We see here how development has diverged. But how do we
+      bring these two branches back together? 
+
+    - Welcome to merging
   </note>
   <note number="38">
     - Won't go into details
+
+    - Can be simple if its a fast-forward (Dave update), 
+      more complicated in cases of simultaneous development
 
     - Merging works on BRANCHES, it is the counterpart to a simultaneous
       workflow.
